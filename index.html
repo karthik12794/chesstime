@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chess 2025 - Karthik Kandimalla</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="background"></div>
+  <div class="container">
+    <h1>♟ Chess 2025</h1>
+    <h2>By Karthik Kandimalla</h2>
+
+    <div id="chessboard"></div>
+
+    <div id="settings">
+      <button id="helpBtn">Help</button>
+      <button id="feedbackBtn">Feedback</button>
+      <label>
+        Contrast:
+        <input type="range" id="contrastSlider" min="50" max="150" value="100" />
+      </label>
+      <label>
+        Board Style:
+        <select id="boardStyleSelect">
+          <option value="classic">Classic</option>
+          <option value="dark">Dark</option>
+          <option value="modern">Modern</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div id="modal" class="hidden">
+    <div id="modalContent">
+      <button id="closeModal">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* Reset & base */
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  background: #111;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#background {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+  transition: background-image 1s ease-in-out;
+  animation: subtleShift 15s infinite alternate;
+}
+
+@keyframes subtleShift {
+  0% { filter: brightness(0.5) saturate(0.8) hue-rotate(0deg); }
+  50% { filter: brightness(0.65) saturate(1) hue-rotate(15deg); }
+  100% { filter: brightness(0.5) saturate(0.8) hue-rotate(0deg); }
+}
+
+.container {
+  background: rgba(0,0,0,0.75);
+  border-radius: 15px;
+  padding: 20px;
+  width: 360px;
+  box-shadow: 0 0 20px #0099ffaa;
+  text-align: center;
+  user-select: none;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+  color: #00ccff;
+  text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccffaa;
+}
+
+h2 {
+  font-size: 1rem;
+  font-style: italic;
+  color: #00aaffbb;
+  margin-bottom: 15px;
+  letter-spacing: 1.5px;
+}
+
+#chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00aaffaa inset;
+  user-select: none;
+  cursor: pointer;
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.square.light {
+  background-color: #f0d9b5;
+  box-shadow: inset 0 0 5px #fff8cc;
+}
+
+.square.dark {
+  background-color: #b58863;
+  box-shadow: inset 0 0 5px #654321;
+}
+
+.square.highlight {
+  box-shadow: 0 0 15px 5px #00ccff;
+  background-color: #00aaffbb !important;
+}
+
+#settings {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#settings label, #settings button {
+  font-size: 0.85rem;
+  color: #00ccff;
+  background: transparent;
+  border: 1px solid #00ccff;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+#settings label input, #settings label select {
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  padding: 3px 6px;
+  background: #004466;
+  color: #ccf6ff;
+  font-size: 0.9rem;
+}
+
+#settings button:hover, #settings label:hover {
+  background-color: #00ccff22;
+}
+
+#modal {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+#modalContent {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 0 30px #00aaffaa;
+  position: relative;
+  color: #00ccff;
+  font-size: 1rem;
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #00ccff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
